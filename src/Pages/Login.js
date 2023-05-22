@@ -8,7 +8,7 @@ const Login = () => {
   const [validPassword, setValidPassword] = useState(false)
 
   const navigate = useNavigate()
-  
+
   useEffect(() => {
     const validateCpf = () => {
       const validate = /^\d{3}\d{3}\d{3}\d{2}$/.test(cpf)
@@ -18,7 +18,8 @@ const Login = () => {
 
     const validatePassword = () => {
       const maxLength = 5
-      setValidPassword((password.length > maxLength))
+      const validate = (password.length > maxLength)
+      setValidPassword(validate)
     }
     validatePassword()
   })
@@ -39,7 +40,7 @@ const Login = () => {
       <h1>Login</h1>
       <label htmlFor="cpf">
         CPF
-        <input type="text" className="cpf" name="cpf" onChange={(e) => handleChange(setCpf, e)}/>
+        <input type="text" className="cpf" name="cpf" onChange={(e) => handleChange(setCpf, e)} />
       </label>
       <label htmlFor="password">
         Senha
