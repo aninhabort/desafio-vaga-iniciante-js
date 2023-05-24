@@ -1,9 +1,9 @@
 import React from "react";
 
-const ChatMessage = () => {
+const ChatMessage = ({ userInfo }) => {
   return (
     <div>
-      <p><strong>User:</strong> Message</p>
+      <p><strong>You</strong> {userInfo}</p>
     </div>
   )
 }
