@@ -1,26 +1,22 @@
 import React, { useState } from "react";
 
-const ChatFooter = ({ socket }) => {
+const ChatFooter = () => {
   const [message, setMessage] = useState('')
 
   const handleSendMessage = (e) => {
-    const { value } = e.target
-    value.preventDefault();
-    if (message.trim() && localStorage.getItem('userName')) {
-      socket.emit('message', {
-        text: message,
-        name: localStorage.getItem('userName'),
-        id: `${socket.id}${Math.random()}`,
-        socketID: socket.id,
-      });
-    }
+    e.preventDefault();
+    console.log({ userName: localStorage.getItem('userName'), message });
     setMessage('');
   };
 
   return (
     <div>
-      <form>
-        <input type="text" className="message" value={ message } onChange={(e) => handleSendMessage(e)}/>
+      <form onSubmit={handleSendMessage}>
+        <input
+          type="text" c
+          lassName="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)} />
         <button type="submit">Send</button>
       </form>
     </div>

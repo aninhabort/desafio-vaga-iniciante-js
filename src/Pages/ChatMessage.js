@@ -3,8 +3,7 @@ import React from "react";
 const ChatMessage = () => {
   return (
     <div>
-      <p>UserName</p>
-      <p>Text Message</p>
+      <p><strong>User:</strong> Message</p>
     </div>
   )
 }
