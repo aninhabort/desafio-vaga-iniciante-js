@@ -47,6 +47,10 @@ const Login = () => {
         <input type="password" className="password" name="password" onChange={(e) => handleChange(setPassword, e)} />
       </label>
       <button type="button" onClick={handleClick}>Login</button>
+      <div>
+        {!validCpf && (<span>CPF Inválido</span>)}
+        {!validPassword && (<span>Senha Inválida</span>)}
+      </div>
     </div>
   )
 }
